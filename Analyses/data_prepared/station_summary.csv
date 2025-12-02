@@ -1,8 +1,0 @@
-Station,Has_WL,Met_Variables,Total_Columns,Overall_Missing_Pct,Recommendation
-005,True,6,7,6.446171897917277,✅ RECOMMENDED for modeling
-008,True,6,7,46.60294644894234,❌ NOT RECOMMENDED (too much missing data)
-013,True,6,7,2.5667351129363447,✅ RECOMMENDED for modeling
-015,True,6,7,62.256363873407,❌ NOT RECOMMENDED (too much missing data)
-068,True,6,7,10.680877415990352,⚠️  USE WITH CAUTION
-202,True,6,7,3.4223134839151266,✅ RECOMMENDED for modeling
-272,True,6,7,16.644666079984354,⚠️  USE WITH CAUTION
