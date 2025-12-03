@@ -12,9 +12,7 @@ df['datetime'] = pd.to_datetime(df['datetime'])
 
 print(f"\n[1/10] Loaded: {df.shape}")
 
-# ==============================================================================
 # STATION SELECTION (Based on Quality Analysis)
-# ==============================================================================
 
 TARGET = '005-pwl'
 
@@ -37,9 +35,7 @@ print(f"[2/10] Selected columns: {len(keep_cols)-1}")
 print(f"  Water level: {len(wl_stations)}")
 print(f"  Met features: {len(keep_cols) - len(wl_stations) - 1}")
 
-# ==============================================================================
 # FILL MISSING DATA
-# ==============================================================================
 
 print(f"\n[3/10] Filling missing data...")
 
@@ -54,9 +50,7 @@ initial_len = len(df)
 df = df[df[TARGET].notna()]
 print(f"  Rows: {initial_len:,} → {len(df):,}")
 
-# ==============================================================================
 # ASTRONOMICAL FEATURES
-# ==============================================================================
 
 print(f"\n[4/10] Creating astronomical features...")
 
@@ -81,9 +75,7 @@ df['spring_neap'] = np.cos(2 * np.pi * df['lunar_phase'])
 
 print(f"  Added: 9 astronomical features")
 
-# ==============================================================================
 # WIND FEATURES
-# ==============================================================================
 
 print(f"\n[5/10] Creating wind features...")
 
@@ -97,9 +89,7 @@ df['005_along_channel'] = df['005_wind_v']
 
 print(f"  Added: 10 wind features")
 
-# ==============================================================================
 # PRESSURE FEATURES
-# ==============================================================================
 
 print(f"\n[6/10] Creating pressure features...")
 
@@ -114,9 +104,7 @@ if '013-bpr' in df.columns and '202-bpr' in df.columns:
 
 print(f"  Added: 6 pressure features")
 
-# ==============================================================================
 # TEMPERATURE FEATURES
-# ==============================================================================
 
 print(f"\n[7/10] Creating temperature features...")
 
@@ -131,9 +119,7 @@ if '202-wtp' in df.columns:
 
 print(f"  Added: 3 temperature features")
 
-# ==============================================================================
 # SPATIAL FEATURES
-# ==============================================================================
 
 print(f"\n[8/10] Creating spatial features...")
 
@@ -148,9 +134,7 @@ df['packery_anomaly'] = df[TARGET] - df['spatial_mean']
 
 print(f"  Added: 6 spatial features")
 
-# ==============================================================================
 # TEMPORAL FEATURES
-# ==============================================================================
 
 print(f"\n[9/10] Creating temporal features...")
 
@@ -182,9 +166,7 @@ df['month_cos'] = np.cos(2 * np.pi * df['month'] / 12)
 
 print(f"  Added: 29 temporal features")
 
-# ==============================================================================
 # FILL DERIVED FEATURES & CLEAN
-# ==============================================================================
 
 print(f"\n[10/10] Cleaning derived features...")
 
@@ -200,9 +182,7 @@ df = df.iloc[48:]
 
 print(f"  Final rows: {len(df):,}")
 
-# ==============================================================================
 # FEATURE SELECTION & CORRELATION REMOVAL
-# ==============================================================================
 
 print(f"\n[Feature Selection]")
 
@@ -228,9 +208,7 @@ if to_drop:
 
 print(f"  Final features: {len(all_features)}")
 
-# ==============================================================================
 # TRAIN/VALIDATION SPLIT
-# ==============================================================================
 
 print(f"\n[Splitting Data]")
 
@@ -240,9 +218,7 @@ val = df[df['datetime'] >= '2024-01-01'].copy()
 print(f"  Training:   {len(train):,} ({train['datetime'].min()} to {train['datetime'].max()})")
 print(f"  Validation: {len(val):,} ({val['datetime'].min()} to {val['datetime'].max()})")
 
-# ==============================================================================
 # SAVE
-# ==============================================================================
 
 print(f"\n[Saving]")
 
@@ -271,9 +247,7 @@ print(f"  ✅ modeling_enhanced/val_data.csv")
 print(f"  ✅ modeling_enhanced/features.csv")
 print(f"  ✅ modeling_enhanced/metadata.csv")
 
-# ==============================================================================
 # FEATURE SUMMARY
-# ==============================================================================
 
 print("\n" + "="*80)
 print("FEATURE ENGINEERING COMPLETE")

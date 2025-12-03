@@ -13,9 +13,7 @@ print("="*80)
 print("COMPREHENSIVE VISUALIZATION SUITE - FINAL VERSION")
 print("="*80)
 
-# ==============================================================================
 # LOAD AND VALIDATE DATA
-# ==============================================================================
 
 print("\n[1/15] Loading and validating data...")
 
@@ -59,9 +57,7 @@ for scenario in scenarios:
 
 print(f"\n  📊 Loaded {len(test_predictions)} test & {len(val_predictions)} validation scenarios")
 
-# ==============================================================================
 # HELPER FUNCTIONS
-# ==============================================================================
 
 def get_model_data(data, model_name):
     """Get model predictions with fallback for different column names"""
@@ -96,9 +92,7 @@ def calculate_metrics(actual, predicted):
         'n_samples': len(actual_clean)
     }
 
-# ==============================================================================
 # PLOT 1: Model Performance Comparison Bars (Validation vs Test)
-# ==============================================================================
 
 print("\n[2/15] Creating Plot 1: Model Performance Comparison...")
 
@@ -151,9 +145,7 @@ plt.savefig('plots/01_model_performance_comparison.png', dpi=300, bbox_inches='t
 print("  ✅ Saved: plots/01_model_performance_comparison.png")
 plt.close()
 
-# ==============================================================================
 # PLOT 2: Performance Heatmap
-# ==============================================================================
 
 print("\n[3/15] Creating Plot 2: Performance Heatmap...")
 
@@ -188,9 +180,7 @@ plt.savefig('plots/02_performance_heatmap.png', dpi=300, bbox_inches='tight')
 print("  ✅ Saved: plots/02_performance_heatmap.png")
 plt.close()
 
-# ==============================================================================
 # PLOT 3 & 4: Time Series (Validation & Test)
-# ==============================================================================
 
 print("\n[4/15] Creating Plots 3-4: Time Series...")
 
@@ -229,9 +219,7 @@ for dataset_name, predictions, plot_num in [('Validation', val_predictions, '03'
         print(f"  ✅ Saved: plots/{plot_num}_{dataset_name.lower().replace(' ', '')}_timeseries_week.png")
         plt.close()
 
-# ==============================================================================
 # PLOT 5 & 6: COMPLETE SCATTER PLOTS
-# ==============================================================================
 
 print("\n[5/15] Creating Plots 5-6: Complete Scatter Plots...")
 
@@ -306,9 +294,7 @@ for dataset_name, predictions, color, plot_num in [('Validation', val_prediction
     print(f"  ✅ Saved: plots/{plot_num}_{dataset_name.lower().replace(' ', '')}_scatter_complete.png")
     plt.close()
 
-# ==============================================================================
 # PLOT 7 & 8: ERROR DISTRIBUTIONS
-# ==============================================================================
 
 print("\n[6/15] Creating Plots 7-8: Error Distributions...")
 
@@ -392,9 +378,7 @@ for dataset_name, predictions, color, plot_num in [('Validation', val_prediction
     print(f"  ✅ Saved: plots/{plot_num}_{dataset_name.lower().replace(' ', '')}_error_distribution.png")
     plt.close()
 
-# ==============================================================================
 # PLOT 9: Validation vs Test Comparison (4 subplots)
-# ==============================================================================
 
 print("\n[7/15] Creating Plot 9: Validation vs Test Comparison...")
 
@@ -495,9 +479,7 @@ plt.savefig('plots/09_validation_vs_test_comparison.png', dpi=300, bbox_inches='
 print("  ✅ Saved: plots/09_validation_vs_test_comparison.png")
 plt.close()
 
-# ==============================================================================
 # PLOT 10: Summary Performance Table
-# ==============================================================================
 
 print("\n[8/15] Creating Plot 10: Summary Performance Table...")
 
@@ -543,9 +525,7 @@ plt.savefig('plots/10_summary_performance_table.png', dpi=300, bbox_inches='tigh
 print("  ✅ Saved: plots/10_summary_performance_table.png")
 plt.close()
 
-# ==============================================================================
 # SUMMARY
-# ==============================================================================
 
 print("\n" + "="*80)
 print("✅ COMPREHENSIVE VISUALIZATION SUITE COMPLETE!")

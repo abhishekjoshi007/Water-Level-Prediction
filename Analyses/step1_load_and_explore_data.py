@@ -12,9 +12,7 @@ print("="*80)
 print("STEP 1: COMPREHENSIVE DATA QUALITY ANALYSIS")
 print("="*80)
 
-# ==============================================================================
 # LOAD ALL DATA (NO FILTERING)
-# ==============================================================================
 
 print("\n[1/8] Loading ALL data files...")
 
@@ -34,9 +32,7 @@ df_met['datetime'] = pd.to_datetime(df_met['datetime'])
 print(f"  ✅ Met data: {df_met.shape}")
 print(f"     Sample columns: {df_met.columns.tolist()[:10]}")
 
-# ==============================================================================
 # MERGE ALL DATA
-# ==============================================================================
 
 print("\n[2/8] Merging ALL datasets...")
 
@@ -46,9 +42,7 @@ print(f"  Total columns: {len(df_complete.columns)} (1 datetime + {len(df_comple
 print(f"  Date range: {df_complete['datetime'].min()} to {df_complete['datetime'].max()}")
 print(f"  Total hours: {len(df_complete):,}")
 
-# ==============================================================================
 # COMPREHENSIVE DATA QUALITY ANALYSIS - WATER LEVEL
-# ==============================================================================
 
 print("\n[3/8] Water Level Data Quality Analysis...")
 
@@ -120,9 +114,7 @@ for station in wl_stations:
 # Create DataFrame for easy analysis
 df_wl_quality = pd.DataFrame(wl_quality)
 
-# ==============================================================================
 # COMPREHENSIVE DATA QUALITY ANALYSIS - METEOROLOGICAL
-# ==============================================================================
 
 print("\n[4/8] Meteorological Data Quality Analysis...")
 
@@ -193,9 +185,7 @@ for var_code, var_name in met_variables.items():
 
 df_met_quality = pd.DataFrame(met_quality)
 
-# ==============================================================================
 # STATION-BY-STATION SUMMARY
-# ==============================================================================
 
 print("\n[5/8] Station-by-Station Complete Summary...")
 
@@ -258,9 +248,7 @@ for station_id in all_station_ids:
 
 df_station_summary = pd.DataFrame(station_summary)
 
-# ==============================================================================
 # TEMPORAL COVERAGE ANALYSIS
-# ==============================================================================
 
 print("\n[6/8] Temporal Coverage Analysis...")
 
@@ -294,9 +282,7 @@ print(f"    Max: {monthly_coverage.max()} records/month")
 print(f"    Mean: {monthly_coverage.mean():.0f} records/month")
 print(f"    Expected: ~720 records/month (30 days × 24 hours)")
 
-# ==============================================================================
 # CORRELATION ANALYSIS (Only for good quality stations)
-# ==============================================================================
 
 print("\n[7/8] Correlation Analysis...")
 
@@ -324,9 +310,7 @@ if len(good_wl_stations) > 1:
 else:
     print(f"  ⚠️  Not enough good quality stations for correlation analysis")
 
-# ==============================================================================
 # SAVE COMPLETE DATA & QUALITY REPORTS
-# ==============================================================================
 
 print("\n[8/8] Saving complete data and quality reports...")
 
@@ -348,9 +332,7 @@ print(f"  ✅ Saved: data_prepared/meteorological_quality_report.csv")
 df_station_summary.to_csv('data_prepared/station_summary.csv', index=False)
 print(f"  ✅ Saved: data_prepared/station_summary.csv")
 
-# ==============================================================================
 # COMPREHENSIVE VISUALIZATIONS
-# ==============================================================================
 
 print("\n[Visualization] Creating comprehensive data quality visualizations...")
 
@@ -438,9 +420,7 @@ print(f"  ✅ Saved: data_prepared/comprehensive_data_quality.png")
 
 plt.close()
 
-# ==============================================================================
 # DETAILED SUMMARY & RECOMMENDATIONS
-# ==============================================================================
 
 print("\n" + "="*80)
 print("COMPREHENSIVE DATA QUALITY SUMMARY")

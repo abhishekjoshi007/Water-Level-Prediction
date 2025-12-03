@@ -26,9 +26,7 @@ print(f"  Total features: {len(all_features)}")
 print(f"  Training samples: {len(train):,}")
 print(f"  Validation samples: {len(val):,}")
 
-# ==============================================================================
 # DEFINE SCENARIOS
-# ==============================================================================
 
 scenarios = {
     'Scenario1_1h': {
@@ -54,9 +52,7 @@ scenarios = {
 
 all_results = []
 
-# ==============================================================================
 # TRAIN EACH SCENARIO
-# ==============================================================================
 
 for scenario_name, config in scenarios.items():
     print("\n" + "="*80)
@@ -250,9 +246,7 @@ for scenario_name, config in scenarios.items():
     
     print(f"\n  ✅ Saved: models/{scenario_name}/")
 
-# ==============================================================================
 # COMBINED RESULTS
-# ==============================================================================
 
 print("\n" + "="*80)
 print("COMBINED RESULTS - ALL SCENARIOS")
@@ -264,9 +258,7 @@ print("\n" + combined_df.to_string(index=False))
 combined_df.to_csv('models/all_scenarios_results.csv', index=False)
 print(f"\n✅ Saved: models/all_scenarios_results.csv")
 
-# ==============================================================================
 # SUMMARY COMPARISON
-# ==============================================================================
 
 print("\n" + "="*80)
 print("PERFORMANCE SUMMARY BY HORIZON")

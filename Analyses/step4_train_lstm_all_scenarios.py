@@ -1,5 +1,3 @@
-# step4_train_lstm_all_scenarios.py
-
 import pandas as pd
 import numpy as np
 import torch
