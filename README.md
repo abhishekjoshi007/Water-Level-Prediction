@@ -475,8 +475,3 @@ For more information about the methods and data:
 ## Contact and Support
 
 For questions about this analysis pipeline or to report issues, please refer to the main project repository documentation.
-
----
-
-Last Updated: December 2024
-Version: 1.0

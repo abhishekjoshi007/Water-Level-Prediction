@@ -1,5 +1,3 @@
-# step1_load_and_explore_ALL_data.py
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
